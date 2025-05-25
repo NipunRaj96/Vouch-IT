@@ -15,7 +15,6 @@ const ProductDetailPage: React.FC = () => {
   const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
-    // Simulate loading data
     setIsLoading(true);
     
     setTimeout(() => {
@@ -25,8 +24,6 @@ const ProductDetailPage: React.FC = () => {
         if (foundProduct) {
           setProduct(foundProduct);
           setSelectedImage(foundProduct.image);
-          
-          // Generate mock reviews
           const mockReviews = foundProduct.mockReviews || [];
           setReviews(mockReviews);
         }
@@ -43,7 +40,6 @@ const ProductDetailPage: React.FC = () => {
   }) => {
     if (!product) return;
 
-    // Create a new review
     const newReview: Review = {
       id: `review-${Date.now()}`,
       productId: product.id,
@@ -51,18 +47,15 @@ const ProductDetailPage: React.FC = () => {
       comment: review.comment,
       sentiment: review.sentiment,
       date: new Date().toISOString(),
-      userName: 'You', // In a real app, this would be the logged-in user
+      userName: 'You',
     };
 
-    // Add the review to the list
     const updatedReviews = [newReview, ...reviews];
     setReviews(updatedReviews);
 
-    // Update the product rating
     const totalRatings = updatedReviews.reduce((sum, r) => sum + r.rating, 0);
     const newAvgRating = totalRatings / updatedReviews.length;
     
-    // Apply sentiment adjustment
     let sentimentAdjustment = 0;
     if (review.sentiment === 'positive') sentimentAdjustment = 0.2;
     if (review.sentiment === 'negative') sentimentAdjustment = -0.2;
@@ -111,7 +104,6 @@ const ProductDetailPage: React.FC = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      {/* Breadcrumbs */}
       <nav className="text-sm mb-6">
         <ol className="flex items-center space-x-2">
           <li>
@@ -126,9 +118,7 @@ const ProductDetailPage: React.FC = () => {
         </ol>
       </nav>
       
-      {/* Product Details */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
-        {/* Product Images */}
         <div>
           <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden mb-4">
             <img
@@ -168,7 +158,6 @@ const ProductDetailPage: React.FC = () => {
           )}
         </div>
         
-        {/* Product Info */}
         <div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">{product.name}</h1>
           
@@ -180,7 +169,7 @@ const ProductDetailPage: React.FC = () => {
           </div>
           
           <p className="text-2xl font-bold text-gray-900 mb-6">
-            ${product.price.toFixed(2)}
+            ₹{product.price.toFixed(2)}
           </p>
           
           <div className="mb-6">
@@ -199,7 +188,6 @@ const ProductDetailPage: React.FC = () => {
             </div>
           )}
           
-          {/* Quantity Selector */}
           <div className="mb-6">
             <label htmlFor="quantity" className="block text-sm font-medium text-gray-700 mb-1">
               Quantity
@@ -228,19 +216,16 @@ const ProductDetailPage: React.FC = () => {
             </div>
           </div>
           
-          {/* Add to Cart Button */}
           <button className="w-full bg-black text-white py-3 px-6 rounded-md hover:bg-gray-800 transition-colors mb-4">
             Add to Cart
           </button>
         </div>
       </div>
       
-      {/* Reviews Section */}
       <div className="mb-16">
         <h2 className="text-2xl font-bold mb-6">Customer Reviews</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Review Summary */}
           <div className="bg-white p-6 rounded-lg shadow-sm">
             <h3 className="text-lg font-medium mb-4">Review Summary</h3>
             
@@ -252,7 +237,6 @@ const ProductDetailPage: React.FC = () => {
               </div>
             </div>
             
-            {/* Rating Distribution */}
             <div className="space-y-2">
               {[5, 4, 3, 2, 1].map((star) => {
                 const count = reviews.filter(r => Math.round(r.rating) === star).length;
@@ -274,19 +258,16 @@ const ProductDetailPage: React.FC = () => {
             </div>
           </div>
           
-          {/* Review List */}
           <div className="md:col-span-2">
             <div className="bg-white p-6 rounded-lg shadow-sm mb-8">
               <ReviewList reviews={reviews} />
             </div>
             
-            {/* Review Form */}
             <ReviewForm productId={product.id} onReviewSubmit={handleReviewSubmit} />
           </div>
         </div>
       </div>
       
-      {/* Related Products */}
       <div>
         <h2 className="text-2xl font-bold mb-6">You Might Also Like</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
@@ -311,7 +292,7 @@ const ProductDetailPage: React.FC = () => {
                   <StarRating rating={relatedProduct.rating} size={14} />
                   <span className="ml-1 text-xs text-gray-500">({relatedProduct.reviewCount})</span>
                 </div>
-                <p className="mt-1 font-bold">${relatedProduct.price.toFixed(2)}</p>
+                <p className="mt-1 font-bold">₹{relatedProduct.price.toFixed(2)}</p>
               </Link>
             ))}
         </div>
