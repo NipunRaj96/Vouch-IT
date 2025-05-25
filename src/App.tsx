@@ -48,7 +48,7 @@ function App() {
             <div className="mt-8 pt-8 border-t border-gray-800 text-center">
               <p className="text-gray-400 mb-2">Email: nipunraj2004@gmail.com</p>
               <p className="text-gray-400 text-sm">
-                &copy; {new Date().getFullYear()} Vouch-IT Product Ratings. All rights reserved.
+                &copy; {new Date().getFullYear()} Vouch-IT
               </p>
             </div>
           </div>
