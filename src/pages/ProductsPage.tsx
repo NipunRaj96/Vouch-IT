@@ -14,13 +14,16 @@ const ProductsPage: React.FC = () => {
     { value: 'clothing', label: 'Clothing' },
     { value: 'home', label: 'Home & Kitchen' },
     { value: 'beauty', label: 'Beauty' },
+    { value: 'accessories', label: 'Accessories' },
+    { value: 'fitness', label: 'Fitness' },
   ];
 
   const priceRanges = [
     { value: '0-500', label: 'Under ₹500' },
     { value: '500-1000', label: '₹500 to ₹1000' },
     { value: '1000-2000', label: '₹1000 to ₹2000' },
-    { value: '2000+', label: 'Over ₹2000' },
+    { value: '2000-5000', label: '₹2000 to ₹5000' },
+    { value: '5000+', label: 'Over ₹5000' },
   ];
 
   useEffect(() => {
