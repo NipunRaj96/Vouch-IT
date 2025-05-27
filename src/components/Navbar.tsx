@@ -34,7 +34,34 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
               </div>
             </div>
           </div>
-          <div className="hidden md:flex items-center">
+          
+          <div className="hidden md:flex items-center space-x-6">
+            <div className="flex space-x-4">
+              <a 
+                href="https://www.linkedin.com/in/nipunkumar01/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-green-400 transition-colors"
+              >
+                LinkedIn
+              </a>
+              <a 
+                href="https://github.com/NipunRaj96" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-green-400 transition-colors"
+              >
+                GitHub
+              </a>
+              <a 
+                href="https://nipun.framer.website/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-green-400 transition-colors"
+              >
+                Portfolio
+              </a>
+            </div>
             <Link to="/cart" className="relative p-2 group">
               <ShoppingCart className="h-6 w-6 text-gray-300 group-hover:text-green-400 transition-colors" />
               <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white bg-green-500 rounded-full">
@@ -42,6 +69,7 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
               </span>
             </Link>
           </div>
+
           <div className="md:hidden flex items-center">
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -74,6 +102,32 @@ const Navbar: React.FC<NavbarProps> = ({ onSearch }) => {
             >
               Products
             </Link>
+            <div className="border-t border-gray-700 mt-2 pt-2">
+              <a 
+                href="https://www.linkedin.com/in/nipunkumar01/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-3 py-2 text-gray-300 hover:text-green-400 transition-colors"
+              >
+                LinkedIn
+              </a>
+              <a 
+                href="https://github.com/NipunRaj96"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-3 py-2 text-gray-300 hover:text-green-400 transition-colors"
+              >
+                GitHub
+              </a>
+              <a 
+                href="https://nipun.framer.website/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block px-3 py-2 text-gray-300 hover:text-green-400 transition-colors"
+              >
+                Portfolio
+              </a>
+            </div>
           </div>
         </div>
       )}
