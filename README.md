@@ -1,6 +1,6 @@
-# VouchIt - Consumer-Driven Product Rating Platform
+# VouchIT - Consumer-Driven Product Rating Platform
 
-**VouchIt** is a web-based platform where users can share reviews for products, and those reviews directly influence the product's overall rating. This system prioritises community voice and offers more transparent, sentiment-aware insights into how a product truly performs.
+**VouchIT** is a web-based platform where users can share reviews for products, and those reviews directly influence the product's overall rating. This system prioritises community voice and offers more transparent, sentiment-aware insights into how a product truly performs.
 
 ---
 
@@ -30,7 +30,7 @@ When a user submits a review:
 
 ## 🚀 How to Use
 
-1. Visit: [https://vouch-it.vercel.app](https://vouch-it.vercel.app)
+1. Visit: [VouchIT](https://vouch-it.vercel.app)
 2. Browse products and read what others are saying.
 3. Submit your own review — your voice will influence the product rating!
 
