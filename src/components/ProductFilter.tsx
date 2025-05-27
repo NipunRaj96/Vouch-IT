@@ -45,7 +45,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
 
   return (
     <div className="bg-white rounded-lg shadow-sm mb-6">
-      <div className="p-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         <div>
           <label htmlFor="category" className="block text-sm font-medium text-gray-700 mb-1">
             Category
@@ -57,7 +57,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
               setCategory(e.target.value);
               setTimeout(applyFilters, 0);
             }}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-gray-300 rounded focus:border-green-500 focus:ring focus:ring-green-200 transition-all"
           >
             <option value="">All Categories</option>
             {categories.map((option) => (
@@ -79,7 +79,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
               setPriceRange(e.target.value);
               setTimeout(applyFilters, 0);
             }}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-gray-300 rounded focus:border-green-500 focus:ring focus:ring-green-200 transition-all"
           >
             <option value="">Any Price</option>
             {priceRanges.map((option) => (
@@ -101,7 +101,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
               setSortBy(e.target.value);
               setTimeout(applyFilters, 0);
             }}
-            className="w-full p-2 border border-gray-300 rounded"
+            className="w-full p-2 border border-gray-300 rounded focus:border-green-500 focus:ring focus:ring-green-200 transition-all"
           >
             <option value="featured">Featured</option>
             <option value="price-low-high">Price: Low to High</option>
@@ -114,7 +114,7 @@ const ProductFilter: React.FC<ProductFilterProps> = ({
       <div className="px-4 py-3 bg-gray-50 flex justify-end space-x-4 rounded-b-lg">
         <button
           onClick={resetFilters}
-          className="px-4 py-2 text-sm text-gray-700 hover:text-gray-900"
+          className="px-4 py-2 text-sm text-gray-700 hover:text-green-600 transition-colors"
         >
           Reset Filters
         </button>
