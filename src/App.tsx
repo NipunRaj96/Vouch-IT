@@ -40,8 +40,8 @@ function App() {
               <div>
                 <h3 className="text-lg font-medium mb-4">Quick Links</h3>
                 <ul className="space-y-2">
-                  <li><a href="/" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
-                  <li><a href="/products" className="text-gray-400 hover:text-white transition-colors">Products</a></li>
+                  <li><a href="/" className="text-gray-400 hover:text-green-400 transition-colors">Home</a></li>
+                  <li><a href="/products" className="text-gray-400 hover:text-green-400 transition-colors">Products</a></li>
                 </ul>
               </div>
             </div>
